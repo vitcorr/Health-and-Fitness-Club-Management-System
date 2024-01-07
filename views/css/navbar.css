@@ -1,0 +1,45 @@
+a#link {
+    float: left;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a#link:hover {
+    background-color: #111;
+}
+
+div#header {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}                                 
+
+a#llink {
+    float: right;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a#llink:hover {
+    background-color: #111;
+}
+
+a#greeting {
+    float: right;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}

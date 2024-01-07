@@ -1,0 +1,54 @@
+html
+    head
+        title#title #{url}
+    body
+        include ../partials/header
+        h3 PERSONAL DETAILS
+                h4 First name 
+                    input(id="firstname" class="pd_form-input" type="text" name="firstname" value=pdinfo.first_name)
+                h4 Last name 
+                    input(id="lastname" class="pd_form-input" type="text" name="lastname" value=pdinfo.last_name)
+                h4 Email 
+                    input(id="email" class="pd_form-input" type="text" name="email" value=pdinfo.email)
+                h4 Phone number 
+                    input(id="phone" class="pd_form-input" type="text" name="phone" value=pdinfo.phone_num)
+                h4 Sex 
+                    input(id="sex" class="pd_form-input" type="text" name="sex" value=pdinfo.sex) 
+                h4 Date of birth 
+                    input(id="dob" class="pd_form-input" type="text" name="dob" value=pdinfo.dob)
+                h4 Address  
+                    input(id="address" class="pd_form-input" type="text" name="address" value=pdinfo.home_addr)   
+                br
+                button#savepd(onclick='savepd()') SAVE
+        if (session.type = 2)
+            div#hmform(class='hmform')    
+                h3 HEALTH METRICS 
+                for each in hminfo 
+                    h4 #{each.new_date}
+                    p WEIGHT:
+                        p #{each.new_weight}
+                    p HEIGHT:
+                        p #{each.height}
+                    p BMI:
+                        p #{each.bmi}
+                    br
+                br
+                button#savehm 
+                    a(href='/addnew/' + url) ADD NEW
+            div#erform(class='erform')
+                h3 EXERCISE ROUTINES
+                    for each in erinfo
+                        h4 #{each.routine_description} 
+                            button#editer EDIT
+                button#saveer 
+                    a ADD NEW ROUTINE
+            div#fgform(class='fgform')
+                h3 FITNESS GOALS
+                br
+                button#savefg ADD NEW
+            div#faform(class='faform')
+                h3 FITNESS ACHIEVEMENTS
+        else if (session.type = 3)
+            h1 trainer
+        script
+            include ../pdsave.js

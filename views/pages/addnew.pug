@@ -1,0 +1,18 @@
+html
+    head
+        title#title #{url}
+    body
+        include ../partials/header
+        if (type = 1)
+            h3#1 NEW METRIC
+                h4 Weight 
+                    input(id="weight" class="m_form-input" type="text" name="weight" value=info.new_weight)
+                h4 Height 
+                    input(id="height" class="m_form-input" type="text" name="height" value=info.height)
+                button#add(onclick='savenewhm()' name="1") ADD METRIC
+        else if (type = 2)
+            h3#2 NEW ROUTINE
+        else if (type = 3)
+            h3#type3 NEW GOALS
+        script
+            include ../pdsave.js

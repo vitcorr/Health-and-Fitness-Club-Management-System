@@ -1,0 +1,25 @@
+head
+	style
+		include ../css/navbar.css
+body
+	div#header
+		a#link(href="/") HOME
+		if (session.loggedin)
+			a#llink(href="/logout") Log Out
+			b
+			if (session.type == 1)
+				a#llink(href="/trainers") TRAINERS
+				b
+				a#llink MEMBERS
+				b
+				a#llink BILLING AND PAYMENTS
+				b
+			else if (session.type == 2)
+				a#llink(href="/profile/" + session.user_id) Hi #{session.username}!
+				b
+			else if (session.type == 3)
+				a#llink(href="/profile/" + session.user_id) Hi #{session.username}!
+				b
+		else
+			a#llink(href="/login") Log In
+			b
