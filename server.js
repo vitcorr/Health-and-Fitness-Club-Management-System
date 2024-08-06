@@ -7,7 +7,7 @@ const app = express();
 
 // PostgreSQL connection
 const db = new Client({
-		connectionString: 'postgres://postgres:Calcium02@localhost:5432/project_1',
+		connectionString: 'postgres://postgres:password@localhost:5432/project_1',
 });
 
 db.connect()
